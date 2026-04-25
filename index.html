@@ -899,29 +899,30 @@ img{display:block;max-width:100%;}
   .footer{padding:60px 0 36px;}
 
   /* ── Hero ── */
-  .hero-content{padding:52px 22px 84px;}
-  .hero-left h1{font-size:2.6rem;line-height:1.04;}
-  .hero-left p{font-size:0.95rem;margin-bottom:26px;}
-  .hero-actions{gap:10px;}
-  .btn-gold,.btn-ghost{padding:14px 24px;font-size:0.7rem;width:100%;text-align:center;justify-content:center;}
-
-  /* Hero stats */
-  .hero-stats{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:0;margin-top:36px;padding-top:28px;text-align:center;
-  }
-  .hero-stat-val{font-size:1.6rem;margin-bottom:4px;}
-  .hero-stat-label{font-size:0.58rem;}
+  .hero-content{padding:52px 22px 100px;}
+  .hero-left h1{font-size:3.2rem;line-height:1.02;margin-bottom:28px;}
+  .hero-left p{font-size:1rem;line-height:1.8;margin-bottom:36px;}
+  .hero-actions{gap:14px;flex-direction:column;margin-bottom:44px;}
+  .btn-gold,.btn-ghost{padding:16px 24px;font-size:0.72rem;width:100%;text-align:center;justify-content:center;}
 
   /* Hero search */
-  .hero-search-wrap{margin-top:32px;}
-  .hero-search-label{font-size:0.56rem;}
+  .hero-search-wrap{margin-top:0;margin-bottom:44px;}
+  .hero-search-label{font-size:0.58rem;}
   .hero-search input{font-size:0.88rem;padding:18px 8px 18px 0;}
   .hero-search-icon{padding:0 14px 0 16px;}
   .hero-search button{padding:0 22px;font-size:0.62rem;letter-spacing:0.12em;}
   .hero-search button svg{display:none;}
-  .hero-quick{gap:6px;margin-top:12px;}
-  .hero-quick-chip{font-size:0.62rem;padding:7px 14px;}
+  .hero-quick{gap:6px;margin-top:14px;}
+  .hero-quick-chip{font-size:0.62rem;padding:8px 16px;}
+
+  /* Hero stats */
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:0;margin-top:0;padding-top:32px;text-align:center;
+    border-top:1px solid rgba(198,149,42,0.15);
+  }
+  .hero-stat-val{font-size:1.7rem;margin-bottom:4px;}
+  .hero-stat-label{font-size:0.58rem;}
 
   /* Trust bar — clean 2-column grid */
   .trust-bar{padding:22px 0;}
