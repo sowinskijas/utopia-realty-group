@@ -468,5 +468,34 @@ a{text-decoration:none;color:inherit;}
   </p>
 </footer>
 
+<script>
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const header = document.querySelector('.header');
+  if (!nav) return;
+  if (nav.classList.contains('open')) {
+    closeMenu();
+  } else {
+    nav.classList.add('open');
+    header.classList.add('menu-open');
+    document.addEventListener('click', outsideClose, true);
+  }
+}
+function closeMenu() {
+  const nav = document.getElementById('mobileNav');
+  const header = document.querySelector('.header');
+  if (nav) nav.classList.remove('open');
+  if (header) header.classList.remove('menu-open');
+  document.removeEventListener('click', outsideClose, true);
+}
+function outsideClose(e) {
+  const nav = document.getElementById('mobileNav');
+  const header = document.querySelector('.header');
+  if (nav && !nav.contains(e.target) && header && !header.contains(e.target)) {
+    closeMenu();
+  }
+}
+</script>
+
 </body>
 </html>
