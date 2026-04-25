@@ -244,6 +244,49 @@ a{text-decoration:none;color:inherit;}
 .footer a:hover{color:var(--gold-light);}
 
 /* ── RESPONSIVE ���─ */
+/* ── MOBILE TOGGLE ── */
+.mobile-toggle{
+  display:none;
+  background:none;border:none;cursor:pointer;
+  flex-direction:column;gap:5px;padding:4px;
+  z-index:1001;position:relative;
+}
+.mobile-toggle span{
+  display:block;width:24px;height:1.5px;
+  background:var(--gold);
+  transition:transform 0.3s ease, opacity 0.3s ease;
+  transform-origin:center;
+}
+.menu-open .mobile-toggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.menu-open .mobile-toggle span:nth-child(2){opacity:0;transform:scaleX(0);}
+.menu-open .mobile-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+.mobile-nav{
+  display:none;
+  position:fixed;top:64px;right:16px;z-index:997;
+  width:200px;
+  background:rgba(8,12,18,0.97);
+  backdrop-filter:blur(24px);
+  border:1px solid rgba(201,164,90,0.2);
+  border-radius:4px;
+  flex-direction:column;
+  overflow:hidden;
+  max-height:0;opacity:0;
+  transition:max-height 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
+  box-shadow:0 12px 40px rgba(0,0,0,0.6);
+}
+.mobile-nav.open{max-height:240px;opacity:1;}
+.mobile-nav a{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:rgba(255,255,255,0.7);
+  padding:15px 20px;
+  border-bottom:1px solid rgba(201,164,90,0.08);
+  transition:color 0.2s,background 0.2s;
+  display:block;
+}
+.mobile-nav a:last-child{border-bottom:none;}
+.mobile-nav a:hover,.mobile-nav a.active{color:var(--gold);background:rgba(201,164,90,0.05);}
+
 @media(max-width:900px){
   .team-grid{grid-template-columns:1fr 1fr;}
   .team-section{padding:70px 24px 90px;}
@@ -253,6 +296,8 @@ a{text-decoration:none;color:inherit;}
 @media(max-width:768px){
   .header{padding:0 20px;height:64px;}
   .header-nav{display:none;}
+  .mobile-toggle{display:flex;}
+  .mobile-nav{display:flex;}
   .logo-main{font-size:1.2rem;letter-spacing:0.07em;}
   .page-hero{padding:80px 20px 56px;}
   .page-hero h1{font-size:2.4rem;}
