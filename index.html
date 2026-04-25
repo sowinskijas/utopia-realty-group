@@ -1617,21 +1617,30 @@ window.addEventListener('scroll', () => {
 
 /* Mobile menu toggle */
 function toggleMenu() {
-  const nav = document.querySelector('.header-nav');
+  const nav = document.getElementById('mobileNav');
+  const header = document.getElementById('mainHeader');
   if (!nav) return;
-  const isOpen = nav.style.position === 'fixed';
-  if (!isOpen) {
-    const headerH = document.getElementById('mainHeader').offsetHeight;
-    Object.assign(nav.style, {
-      display:'flex', position:'fixed', top: headerH + 'px', left:'0', right:'0',
-      flexDirection:'column', background:'rgba(10,13,20,0.98)',
-      backdropFilter:'blur(20px)',
-      padding:'28px 24px', gap:'22px', zIndex:'998',
-      borderBottom:'1px solid rgba(201,164,90,0.18)',
-      boxShadow:'0 20px 60px rgba(0,0,0,0.5)'
-    });
+  const isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    closeMenu();
   } else {
-    nav.removeAttribute('style');
+    nav.classList.add('open');
+    header.classList.add('menu-open');
+    document.addEventListener('click', outsideClose, true);
+  }
+}
+function closeMenu() {
+  const nav = document.getElementById('mobileNav');
+  const header = document.getElementById('mainHeader');
+  if (nav) nav.classList.remove('open');
+  if (header) header.classList.remove('menu-open');
+  document.removeEventListener('click', outsideClose, true);
+}
+function outsideClose(e) {
+  const nav = document.getElementById('mobileNav');
+  const header = document.getElementById('mainHeader');
+  if (nav && !nav.contains(e.target) && header && !header.contains(e.target)) {
+    closeMenu();
   }
 }
 
