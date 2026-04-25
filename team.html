@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet The Team | Utopia Realty Group</title>
+<meta name="description" content="Meet the Utopia Realty Group team — Florida's premier luxury real estate professionals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:       #c9a45a;
+  --gold-light: #e0bf80;
+  --gold-dark:  #a07c38;
+  --charcoal:   #0d1117;
+  --border:     rgba(201,164,90,0.2);
+  --white:      #ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Raleway",sans-serif;
+  background:var(--charcoal);
+  color:var(--white);
+  line-height:1.6;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:700;line-height:1.15;}
+a{text-decoration:none;color:inherit;}
+
+/* ── FIXED VIDEO BG ── */
+.video-bg{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;
+}
+.video-bg video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.video-overlay{
+  position:fixed;inset:0;z-index:-1;
+  background:rgba(3,5,10,0.32);
+  pointer-events:none;
+}
+
+/* ── HEADER ── */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:80px;display:flex;align-items:center;padding:0 40px;
+  background:rgba(13,17,23,0.35);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.3s;
+}
+.header.scrolled{
+  height:68px;
+  background:rgba(13,17,23,0.38);
+  box-shadow:none;
+}
+.header-inner{
+  width:100%;max-width:1400px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;
+}
+.header-nav{
+  position:absolute;left:50%;transform:translateX(-50%);
+}
+.header-cta{flex-shrink:0;}
+.header-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.logo-main{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.55rem;font-weight:600;
+  color:var(--white);letter-spacing:0.1em;
+  white-space:nowrap;
+}
+.logo-main span{color:var(--gold);}
+.header-nav{display:flex;gap:36px;align-items:center;}
+.header-nav a{
+  font-size:0.78rem;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.72);
+  position:relative;transition:color 0.2s;
+}
+.header-nav a::after{
+  content:'';position:absolute;bottom:-4px;left:0;right:0;
+  height:1px;background:var(--gold);
+  transform:scaleX(0);transition:transform 0.2s;
+}
+.header-nav a:hover,
+.header-nav a.active{color:var(--white);}
+.header-nav a:hover::after,
+.header-nav a.active::after{transform:scaleX(1);}
+.header-cta{display:flex;align-items:center;gap:20px;}
+
+/* ── PAGE ── */
+.page-wrap{padding-top:80px;min-height:100vh;}
+
+/* ── HERO ── */
+.page-hero{
+  padding:100px 48px 80px;
+  text-align:center;
+  position:relative;
+  border-bottom:1px solid rgba(201,164,90,0.12);
+}
+.page-hero::after{
+  content:'';position:absolute;bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:80px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.eyebrow{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-bottom:20px;
+}
+.eyebrow::before,.eyebrow::after{
+  content:'';width:28px;height:1px;background:var(--gold);
+}
+.page-hero h1{
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  color:var(--white);margin-bottom:18px;
+  letter-spacing:0.02em;
+}
+.page-hero p{
+  color:rgba(255,255,255,0.4);font-size:0.95rem;
+  max-width:480px;margin:0 auto;line-height:1.9;
+  font-weight:300;letter-spacing:0.02em;
+}
+
+/* ── TEAM SECTION ── */
+.team-section{
+  padding:100px 48px 120px;
+  max-width:1200px;margin:0 auto;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+
+/* ── TEAM CARD ── */
+.team-card{
+  background:rgba(8,12,18,0.35);
+  border:1px solid rgba(201,164,90,0.14);
+  border-top:2px solid var(--gold);
+  transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  overflow:hidden;
+}
+.team-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(201,164,90,0.38);
+  box-shadow:0 30px 80px rgba(0,0,0,0.55);
+}
+
+/* Photo placeholder */
+.team-photo{
+  width:100%;
+  aspect-ratio:1/1;
+  background:rgba(255,255,255,0.03);
+  border-bottom:1px solid rgba(201,164,90,0.10);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:12px;
+  position:relative;
+  overflow:hidden;
+}
+.team-photo::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(201,164,90,0.03) 0%,transparent 60%);
+}
+.photo-icon{
+  width:72px;height:72px;border-radius:50%;
+  border:1.5px solid rgba(201,164,90,0.2);
+  background:rgba(201,164,90,0.05);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+  position:relative;z-index:1;
+}
+.photo-label{
+  font-size:0.62rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:rgba(255,255,255,0.2);
+  position:relative;z-index:1;
+}
+
+/* Card body */
+.team-body{
+  padding:30px 32px 36px;
+}
+.team-name{
+  font-size:1.4rem;color:var(--white);
+  margin-bottom:4px;letter-spacing:0.01em;
+}
+.team-title{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+}
+.team-divider{
+  width:32px;height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin-bottom:24px;
+}
+.team-contact{display:flex;flex-direction:column;gap:12px;}
+.team-contact-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(201,164,90,0.08);
+  transition:all 0.25s;
+}
+.team-contact-item:hover{
+  border-color:rgba(201,164,90,0.28);
+  background:rgba(201,164,90,0.04);
+}
+.contact-icon{
+  width:30px;height:30px;
+  border:1px solid rgba(201,164,90,0.18);
+  background:rgba(201,164,90,0.06);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.8rem;flex-shrink:0;
+}
+.contact-detail strong{
+  display:block;font-size:0.58rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2px;
+}
+.contact-detail a{
+  color:rgba(255,255,255,0.65);font-size:0.82rem;font-weight:400;
+  transition:color 0.2s;
+}
+.contact-detail a:hover{color:var(--gold-light);}
+
+/* ── FOOTER ── */
+.footer{
+  background:rgba(3,5,8,0.90);
+  border-top:1px solid rgba(201,164,90,0.16);
+  padding:40px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer p{color:rgba(255,255,255,0.28);font-size:0.72rem;letter-spacing:0.05em;}
+.footer a{color:rgba(255,255,255,0.28);transition:color 0.2s;}
+.footer a:hover{color:var(--gold-light);}
+
+/* ── RESPONSIVE ���─ */
+@media(max-width:900px){
+  .team-grid{grid-template-columns:1fr 1fr;}
+  .team-section{padding:70px 24px 90px;}
+  .page-hero{padding:80px 24px 60px;}
+  .header{padding:0 24px;}
+}
+@media(max-width:768px){
+  .header{padding:0 20px;height:64px;}
+  .header-nav{display:none;}
+  .logo-main{font-size:1.2rem;letter-spacing:0.07em;}
+  .page-hero{padding:80px 20px 56px;}
+  .page-hero h1{font-size:2.4rem;}
+  .team-section{padding:60px 20px 80px;}
+  .team-grid{grid-template-columns:1fr 1fr;gap:20px;}
+  .team-body{padding:24px 22px 28px;}
+  .team-name{font-size:1.2rem;}
+  .footer{padding:28px 20px;flex-direction:column;text-align:center;gap:10px;}
+}
+@media(max-width:480px){
+  .logo-main{font-size:1.05rem;letter-spacing:0.06em;}
+  .header{padding:0 16px;}
+  .team-grid{grid-template-columns:1fr;}
+  .page-hero h1{font-size:2rem;}
+  .team-section{padding:48px 16px 64px;}
+  .footer{padding:24px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Fixed video background -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="18335298-hd_1920_1080_24fps.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="video-overlay"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <div class="logo-main">Utopia <span>Realty</span> Group</div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html#buy">Buy</a>
+      <a href="index.html#sell">Sell</a>
+      <a href="team.html" class="active">Meet The Team</a>
+      <a href="index.html#contact">Contact Us</a>
+    </nav>
+    <div class="header-cta">
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="eyebrow">Utopia Realty Group</div>
+    <h1>Meet The Team</h1>
+    <p>The professionals behind Florida's most trusted luxury real estate firm — dedicated to your vision.</p>
+  </div>
+
+  <!-- TEAM GRID -->
+  <div class="team-section">
+    <div class="team-grid">
+
+      <!-- Member 1 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-icon">&#128100;</div>
+          <div class="photo-label">Photo Coming Soon</div>
+        </div>
+        <div class="team-body">
+          <h3 class="team-name">Angelo Topi</h3>
+          <div class="team-title">Lead Agent &amp; Founder</div>
+          <div class="team-divider"></div>
+          <div class="team-contact">
+            <div class="team-contact-item">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-detail">
+                <strong>Phone</strong>
+                <a href="tel:2489469164">248-946-9164</a>
+              </div>
+            </div>
+            <div class="team-contact-item">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-detail">
+                <strong>Email</strong>
+                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-icon">&#128100;</div>
+          <div class="photo-label">Photo Coming Soon</div>
+        </div>
+        <div class="team-body">
+          <h3 class="team-name">Team Member</h3>
+          <div class="team-title">Luxury Sales Associate</div>
+          <div class="team-divider"></div>
+          <div class="team-contact">
+            <div class="team-contact-item">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-detail">
+                <strong>Phone</strong>
+                <a href="tel:2489469164">248-946-9164</a>
+              </div>
+            </div>
+            <div class="team-contact-item">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-detail">
+                <strong>Email</strong>
+                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <div class="photo-icon">&#128100;</div>
+          <div class="photo-label">Photo Coming Soon</div>
+        </div>
+        <div class="team-body">
+          <h3 class="team-name">Team Member</h3>
+          <div class="team-title">Investment Specialist</div>
+          <div class="team-divider"></div>
+          <div class="team-contact">
+            <div class="team-contact-item">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-detail">
+                <strong>Phone</strong>
+                <a href="tel:2489469164">248-946-9164</a>
+              </div>
+            </div>
+            <div class="team-contact-item">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-detail">
+                <strong>Email</strong>
+                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 Utopia Realty Group. All rights reserved.</p>
+  <p>
+    <a href="tel:2489469164">248-946-9164</a>
+    &nbsp;&nbsp;&#183;&nbsp;&nbsp;
+    <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
