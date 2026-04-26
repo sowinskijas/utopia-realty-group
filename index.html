@@ -211,11 +211,12 @@ img{display:block;max-width:100%;}
 }
 
 /* ──────────────────────────────────────────
-   FIXED VIDEO BACKGROUND
+   HERO VIDEO — CONTAINED BOX
 ──────────────────────────────────────────── */
 .hero-bg{
-  position:fixed;inset:0;z-index:-2;
+  position:absolute;inset:0;z-index:0;
   overflow:hidden;
+  border-radius:16px;
 }
 .hero-bg video{
   position:absolute;inset:0;
@@ -227,10 +228,7 @@ img{display:block;max-width:100%;}
 #bgVideo1{opacity:1;}
 #bgVideo2{opacity:0;}
 #video-fade{
-  position:fixed;inset:0;z-index:-1;
-  background:var(--charcoal);
-  opacity:0;
-  pointer-events:none;
+  display:none;
 }
 
 /* ──────────────────────────────────────────
@@ -238,10 +236,12 @@ img{display:block;max-width:100%;}
 ──────────────────────────────────────────── */
 .hero{
   position:relative;
-  min-height:100vh;
+  min-height:88vh;
   display:flex;flex-direction:column;justify-content:center;
-  padding-top:80px;
-  background:transparent;
+  margin:90px 28px 28px;
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--charcoal);
 }
 /* Static dark vignette behind the text — always present regardless of scroll */
 .hero::before{
