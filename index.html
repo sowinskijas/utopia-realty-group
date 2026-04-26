@@ -584,16 +584,16 @@ img{display:block;max-width:100%;}
 }
 .neighborhoods-grid{
   display:grid;
-  grid-template-columns:1fr;
+  grid-template-columns:repeat(3,1fr);
   gap:16px;
-  max-width:600px;
+  max-width:1100px;
   margin:0 auto;
 }
 .nbhd-card{
   position:relative;overflow:hidden;
   border:1px solid rgba(198,149,42,0.18);
   cursor:pointer;
-  aspect-ratio:16/7;
+  aspect-ratio:3/4;
   display:flex;align-items:flex-end;
   transition:border-color 0.3s;
 }
