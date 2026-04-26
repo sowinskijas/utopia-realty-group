@@ -473,13 +473,7 @@ img{display:block;max-width:100%;}
   display:flex;align-items:center;justify-content:center;gap:12px;
 }
 .hero-search-label::before,
-.hero-search-label::after{
-  content:'';flex:1;max-width:48px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(198,149,42,0.25));
-}
-.hero-search-label::after{
-  background:linear-gradient(90deg,rgba(198,149,42,0.25),transparent);
-}
+.hero-search-label::after{display:none;}
 .hero-search{
   display:flex;align-items:stretch;
   background:rgba(6,10,16,0.7);
