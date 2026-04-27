@@ -343,18 +343,27 @@ img{display:block;max-width:100%;}
   background:transparent;
   padding:50px 40px;
   position:relative;overflow:hidden;
-  transition:background 0.4s;
+  transition:all 0.4s;
   border:none;
   text-align:center;
 }
+.service-card-bg{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0.18;
+  transition:opacity 0.4s;
+  z-index:0;
+}
+.service-card:hover .service-card-bg{opacity:0.28;}
 .service-card::after{
   content:'';position:absolute;
   bottom:0;left:40px;right:40px;height:1px;
   background:linear-gradient(90deg,transparent,rgba(201,164,90,0.3),transparent);
   transform:scaleX(0);transition:transform 0.4s;
 }
-.service-card:hover{background:rgba(201,164,90,0.06);}
 .service-card:hover::after{transform:scaleX(1);}
+.service-icon,.service-card h3,.service-card p,.service-link{position:relative;z-index:1;}
 .service-icon{
   width:48px;height:48px;
   border:1px solid rgba(201,164,90,0.35);
