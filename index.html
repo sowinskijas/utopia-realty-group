@@ -874,6 +874,27 @@ img{display:block;max-width:100%;}
 .menu-open .mobile-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
 /* Mobile dropdown nav */
+/* Mobile section tab bar */
+.mobile-section-tabs{
+  display:none;
+}
+.mst-tab{
+  flex:1;text-align:center;
+  padding:10px 4px;
+  font-family:'Raleway',sans-serif;
+  font-size:0.62rem;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+  border-bottom:2px solid transparent;
+  transition:color 0.2s,border-color 0.2s;
+  white-space:nowrap;
+}
+.mst-tab:hover,.mst-tab.active{
+  color:var(--gold);
+  border-bottom-color:var(--gold);
+}
+
 .mobile-nav{
   display:none;
   position:fixed;top:56px;right:16px;z-index:997;
