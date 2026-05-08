@@ -551,11 +551,11 @@ function openModal(name, title, email, desc, imgSrc) {
   document.body.style.overflow = 'hidden';
 }
 function closeModal(e) {
-  if (e && e.target !== document.getElementById('teamModal') && !e.target.classList.contains('team-modal-close')) return;
+  if (e && e.target && e.target !== document.getElementById('teamModal')) return;
   document.getElementById('teamModal').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal({}); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
 function toggleMenu() {
   const nav = document.getElementById('mobileNav');
