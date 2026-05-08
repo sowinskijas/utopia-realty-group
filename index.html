@@ -1787,7 +1787,7 @@ async function submitContactForm(btn) {
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim();
   const query = q ? q : 'Florida luxury homes';
-  window.open('https://www.zillow.com/homes/' + encodeURIComponent(query) + '_rb/', '_blank');
+  window.open('https://www.zillow.com/homes/for_sale/' + encodeURIComponent(query) + '_rb/', '_blank');
 }
 function quickSearch(city) {
   document.getElementById('searchInput').value = city;
