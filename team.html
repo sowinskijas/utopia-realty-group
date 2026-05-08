@@ -534,6 +534,29 @@ a{text-decoration:none;color:inherit;}
 </footer>
 
 <script>
+function openModal(name, title, email, desc, imgSrc) {
+  document.getElementById('modalName').textContent = name;
+  document.getElementById('modalTitle').innerHTML = title;
+  document.getElementById('modalDesc').textContent = desc;
+  const emailEl = document.getElementById('modalEmail');
+  emailEl.textContent = email;
+  emailEl.href = 'mailto:' + email;
+  const photo = document.getElementById('modalPhoto');
+  if (imgSrc) {
+    photo.innerHTML = '<img src="' + imgSrc + '" alt="' + name + '">';
+  } else {
+    photo.innerHTML = '<span>&#128100;</span>';
+  }
+  document.getElementById('teamModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('teamModal') && !e.target.classList.contains('team-modal-close')) return;
+  document.getElementById('teamModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal({}); });
+
 function toggleMenu() {
   const nav = document.getElementById('mobileNav');
   const header = document.querySelector('.header');
