@@ -331,16 +331,52 @@ img{display:block;max-width:100%;}
   background:transparent;
   padding:120px 0;
 }
-.services-header{text-align:center;margin-bottom:70px;}
-.services-header h2{
-  font-size:clamp(2.4rem,4vw,4rem);
+.services-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:80px;}
+.services-header-text{}
+.services-header-text .section-label{margin-bottom:18px;}
+.services-header-text h2{
+  font-size:clamp(2.2rem,3.8vw,3.6rem);
   color:var(--white);
-  letter-spacing:0.04em;
+  letter-spacing:0.01em;
   font-weight:500;
+  line-height:1.15;
+  margin-bottom:20px;
 }
-.services-header p{
-  color:rgba(255,255,255,0.78);font-size:0.95rem;max-width:500px;
-  margin:18px auto 0;line-height:1.9;font-weight:400;letter-spacing:0.02em;
+.services-header-text p{
+  color:rgba(255,255,255,0.65);font-size:0.93rem;
+  line-height:1.9;font-weight:400;letter-spacing:0.02em;
+  margin-bottom:32px;
+}
+.services-header-text .btn-outline-dark{
+  display:inline-block;
+  padding:14px 28px;
+  border:1px solid rgba(255,255,255,0.25);
+  color:var(--white);
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  transition:all 0.25s;
+  background:rgba(255,255,255,0.04);
+}
+.services-header-text .btn-outline-dark:hover{background:rgba(198,149,42,0.12);border-color:var(--gold);color:var(--gold);}
+.services-header-img{position:relative;}
+.services-header-img img{width:100%;height:420px;object-fit:cover;display:block;}
+.services-header-img::before{
+  content:'';position:absolute;
+  top:-14px;right:-14px;
+  width:60%;height:60%;
+  border-top:2px solid var(--gold);
+  border-right:2px solid var(--gold);
+  z-index:1;pointer-events:none;
+}
+.services-header-img::after{
+  content:'';position:absolute;
+  bottom:-14px;left:-14px;
+  width:40%;height:40%;
+  border-bottom:2px solid rgba(198,149,42,0.4);
+  border-left:2px solid rgba(198,149,42,0.4);
+  z-index:1;pointer-events:none;
 }
 .services-grid{
   display:grid;
@@ -1010,8 +1046,9 @@ img{display:block;max-width:100%;}
   .trust-dot{width:4px;height:4px;}
 
   /* Services */
-  .services-header{margin-bottom:32px;}
-  .services-header h2{font-size:1.8rem;}
+  .services-header{grid-template-columns:1fr;gap:36px;margin-bottom:40px;}
+  .services-header-img{display:none;}
+  .services-header-text h2{font-size:1.8rem;}
   .services-grid{grid-template-columns:1fr;gap:0;}
   .service-card{
     padding:28px 20px;
@@ -1310,9 +1347,15 @@ img{display:block;max-width:100%;}
 <section class="services" id="services">
   <div class="container">
     <div class="services-header reveal">
-      <div class="section-label">What We Do</div>
-      <h2>Full-Service Real Estate</h2>
-      <p>From first showing to closing day, we handle every detail with expert precision and white-glove care.</p>
+      <div class="services-header-text">
+        <div class="section-label">What We Do</div>
+        <h2>Full-Service Real Estate</h2>
+        <p>From first showing to closing day, we handle every detail with expert precision and white-glove care.</p>
+        <a href="#contact" class="btn-outline-dark">Schedule a Consultation</a>
+      </div>
+      <div class="services-header-img">
+        <img src="pexels-nathan-rostampour-3135695-12104694.jpg" alt="Luxury real estate interior">
+      </div>
     </div>
     <div class="services-grid">
       <div class="service-card reveal reveal-delay-1">
