@@ -26,10 +26,13 @@ a{text-decoration:none;color:inherit;}
   border-bottom:1px solid var(--border);transition:all 0.3s;
 }
 .header-inner{width:100%;max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;position:relative;}
-.header-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.logo-main{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;color:var(--white);letter-spacing:0.1em;white-space:nowrap;}
-.logo-main span{color:var(--gold);}
-.logo-main .logo-u{color:var(--white);font-size:1.15em;font-weight:700;}
+.header-logo{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
+.logo-circle{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-circle span{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
+.logo-wordmark{display:flex;flex-direction:column;line-height:1;gap:3px;}
+.logo-main{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.logo-main span{color:var(--white);}
+.logo-sub{font-size:0.44rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
 .header-nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:36px;align-items:center;}
 .header-nav a{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.72);position:relative;transition:color 0.2s;}
 .header-nav a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.2s;}
@@ -122,7 +125,11 @@ a{text-decoration:none;color:inherit;}
 <header class="header" id="mainHeader">
   <div class="header-inner">
     <a href="index.html" class="header-logo">
-      <div class="logo-main"><span class="logo-u">U</span>topia <span>Realty</span></div>
+      <div class="logo-circle"><span>U</span></div>
+      <div class="logo-wordmark">
+        <div class="logo-main">Utopia Realty</div>
+        <div class="logo-sub">Florida's Premier Luxury Real Estate</div>
+      </div>
     </a>
     <nav class="header-nav">
       <a href="index.html#hero">Buy</a>
@@ -167,42 +174,36 @@ a{text-decoration:none;color:inherit;}
     </div>
     <div class="features-grid">
       <div class="feature-item">
-        <div class="feature-icon">&#128200;</div>
         <div class="feature-text">
           <strong>Competitive Commissions</strong>
           <span>Keep more of what you earn.</span>
         </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">&#127968;</div>
         <div class="feature-text">
           <strong>Investor Deal Flow</strong>
           <span>Exclusive access to off-market and investment opportunities.</span>
         </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">&#128101;</div>
         <div class="feature-text">
           <strong>Lead Generation</strong>
           <span>High-quality leads to fuel your pipeline.</span>
         </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">&#128227;</div>
         <div class="feature-text">
           <strong>Modern Marketing</strong>
           <span>Luxury branding and cutting-edge marketing support.</span>
         </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">&#127891;</div>
         <div class="feature-text">
           <strong>Training & Support</strong>
           <span>Ongoing education and mentorship to help you grow.</span>
         </div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">&#127758;</div>
         <div class="feature-text">
           <strong>Growth Opportunities</strong>
           <span>Build your team and your future with Utopia.</span>

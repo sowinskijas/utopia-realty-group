@@ -65,14 +65,13 @@ a{text-decoration:none;color:inherit;}
   position:absolute;left:50%;transform:translateX(-50%);
 }
 .header-cta{flex-shrink:0;}
-.header-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.logo-main{
-  font-family:"Cormorant Garamond",serif;
-  font-size:2rem;font-weight:600;
-  color:var(--white);letter-spacing:0.1em;
-  white-space:nowrap;
-}
-.logo-main span{color:var(--gold);}
+.header-logo{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
+.logo-circle{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-circle span{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;color:var(--gold);}
+.logo-wordmark{display:flex;flex-direction:column;line-height:1;gap:3px;}
+.logo-main{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;}
+.logo-main span{color:var(--white);}
+.logo-sub{font-size:0.44rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);}
 .header-nav{display:flex;gap:36px;align-items:center;}
 .header-nav a{
   font-size:0.78rem;font-weight:600;letter-spacing:0.1em;
@@ -384,7 +383,11 @@ a{text-decoration:none;color:inherit;}
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="header-logo">
-      <div class="logo-main">Utopia <span>Realty</span></div>
+      <div class="logo-circle"><span>U</span></div>
+      <div class="logo-wordmark">
+        <div class="logo-main">Utopia Realty</div>
+        <div class="logo-sub">Florida's Premier Luxury Real Estate</div>
+      </div>
     </a>
     <nav class="header-nav">
       <a href="index.html#hero">Buy</a>
@@ -422,14 +425,14 @@ a{text-decoration:none;color:inherit;}
     <div class="team-grid">
 
       <!-- Member 1 -->
-      <div class="team-card" onclick="openModal('Angelo Topi','Lead Agent &amp; Founder','angelotopi.realtor@gmail.com','Florida-based luxury real estate expert with a passion for connecting clients with their dream properties across South Florida, Orlando, and Tampa.','')">
+      <div class="team-card" onclick="openModal('Angelo Topi','Real Estate Broker &amp; Founder','utopiatransactions@gmail.com','Florida-based luxury real estate expert with a passion for connecting clients with their dream properties across South Florida, Orlando, and Tampa.','','248-946-9164')">
         <div class="team-photo">
           <div class="photo-icon">&#128100;</div>
           <div class="photo-label">Photo Coming Soon</div>
         </div>
         <div class="team-body">
           <h3 class="team-name">Angelo Topi</h3>
-          <div class="team-title">Lead Agent &amp; Founder</div>
+          <div class="team-title">Real Estate Broker &amp; Founder</div>
           <div class="team-divider"></div>
           <div class="team-contact">
             <div class="team-contact-item">
@@ -443,7 +446,7 @@ a{text-decoration:none;color:inherit;}
               <div class="contact-icon">&#9993;</div>
               <div class="contact-detail">
                 <strong>Email</strong>
-                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+                <a href="mailto:utopiatransactions@gmail.com">utopiatransactions@gmail.com</a>
               </div>
             </div>
           </div>
@@ -451,28 +454,26 @@ a{text-decoration:none;color:inherit;}
       </div>
 
       <!-- Member 2 -->
-      <div class="team-card" onclick="openModal('Team Member','Luxury Sales Associate','angelotopi.realtor@gmail.com','Dedicated sales professional specializing in luxury residential properties across Florida\'s most desirable markets.','')">
-        <div class="team-photo">
-          <div class="photo-icon">&#128100;</div>
-          <div class="photo-label">Photo Coming Soon</div>
+      <div class="team-card" onclick="openModal('Matthew Moore','Real Estate Agent','mattmooreflrealtor@gmail.com','Dedicated sales professional specializing in luxury residential properties across Florida\'s most desirable markets.','matthew-moore.jpg','313-715-0072')">
+        <div class="team-photo" style="background-image:url('matthew-moore.jpg');background-size:cover;background-position:center top;">
         </div>
         <div class="team-body">
-          <h3 class="team-name">Team Member</h3>
-          <div class="team-title">Luxury Sales Associate</div>
+          <h3 class="team-name">Matthew Moore</h3>
+          <div class="team-title">Real Estate Agent</div>
           <div class="team-divider"></div>
           <div class="team-contact">
             <div class="team-contact-item">
               <div class="contact-icon">&#128222;</div>
               <div class="contact-detail">
                 <strong>Phone</strong>
-                <a href="tel:2489469164">248-946-9164</a>
+                <a href="tel:3137150072">313-715-0072</a>
               </div>
             </div>
             <div class="team-contact-item">
               <div class="contact-icon">&#9993;</div>
               <div class="contact-detail">
                 <strong>Email</strong>
-                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+                <a href="mailto:mattmooreflrealtor@gmail.com">mattmooreflrealtor@gmail.com</a>
               </div>
             </div>
           </div>
@@ -480,28 +481,26 @@ a{text-decoration:none;color:inherit;}
       </div>
 
       <!-- Member 3 -->
-      <div class="team-card" onclick="openModal('Team Member','Investment Specialist','angelotopi.realtor@gmail.com','Expert in identifying high-yield investment opportunities across Florida\'s fastest-growing real estate markets.','')">
-        <div class="team-photo">
-          <div class="photo-icon">&#128100;</div>
-          <div class="photo-label">Photo Coming Soon</div>
+      <div class="team-card" onclick="openModal('Danielle Baker','Real Estate Agent','daniellebaker.realtor@gmail.com','Dedicated sales professional specializing in luxury residential properties across Florida\'s most desirable markets.','danielle-baker.jpg','(954) 257-6361')">
+        <div class="team-photo" style="background-image:url('danielle-baker.jpg');background-size:cover;background-position:center top;">
         </div>
         <div class="team-body">
-          <h3 class="team-name">Team Member</h3>
-          <div class="team-title">Investment Specialist</div>
+          <h3 class="team-name">Danielle Baker</h3>
+          <div class="team-title">Real Estate Agent</div>
           <div class="team-divider"></div>
           <div class="team-contact">
             <div class="team-contact-item">
               <div class="contact-icon">&#128222;</div>
               <div class="contact-detail">
                 <strong>Phone</strong>
-                <a href="tel:2489469164">248-946-9164</a>
+                <a href="tel:9542576361">(954) 257-6361</a>
               </div>
             </div>
             <div class="team-contact-item">
               <div class="contact-icon">&#9993;</div>
               <div class="contact-detail">
                 <strong>Email</strong>
-                <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+                <a href="mailto:daniellebaker.realtor@gmail.com">daniellebaker.realtor@gmail.com</a>
               </div>
             </div>
           </div>
@@ -520,6 +519,7 @@ a{text-decoration:none;color:inherit;}
     <div class="team-modal-name" id="modalName"></div>
     <div class="team-modal-title" id="modalTitle"></div>
     <p class="team-modal-desc" id="modalDesc"></p>
+    <a class="team-modal-email" id="modalPhone" href="#" style="display:block;margin-bottom:6px;"></a>
     <a class="team-modal-email" id="modalEmail" href="#"></a>
   </div>
 </div>
@@ -530,18 +530,26 @@ a{text-decoration:none;color:inherit;}
   <p>
     <a href="tel:2489469164">248-946-9164</a>
     &nbsp;&nbsp;&#183;&nbsp;&nbsp;
-    <a href="mailto:angelotopi.realtor@gmail.com">angelotopi.realtor@gmail.com</a>
+    <a href="mailto:utopiatransactions@gmail.com">utopiatransactions@gmail.com</a>
   </p>
 </footer>
 
 <script>
-function openModal(name, title, email, desc, imgSrc) {
+function openModal(name, title, email, desc, imgSrc, phone) {
   document.getElementById('modalName').textContent = name;
   document.getElementById('modalTitle').innerHTML = title;
   document.getElementById('modalDesc').textContent = desc;
   const emailEl = document.getElementById('modalEmail');
   emailEl.textContent = email;
   emailEl.href = 'mailto:' + email;
+  const phoneEl = document.getElementById('modalPhone');
+  if (phone) {
+    phoneEl.textContent = phone;
+    phoneEl.href = 'tel:' + phone.replace(/\D/g,'');
+    phoneEl.style.display = 'block';
+  } else {
+    phoneEl.style.display = 'none';
+  }
   const photo = document.getElementById('modalPhoto');
   if (imgSrc) {
     photo.innerHTML = '<img src="' + imgSrc + '" alt="' + name + '">';

@@ -118,24 +118,37 @@ img{display:block;max-width:100%;}
 }
 .header-cta{flex-shrink:0;}
 .header-logo{
-  display:flex;align-items:center;gap:10px;
+  display:flex;align-items:center;gap:12px;
   flex-shrink:0;
   text-decoration:none;
 }
+.logo-circle{
+  width:38px;height:38px;
+  border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.logo-circle span{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--gold);letter-spacing:0;
+}
 .logo-wordmark{
-  display:flex;flex-direction:column;line-height:1;
+  display:flex;flex-direction:column;line-height:1;gap:3px;
 }
 .logo-main{
   font-family:"Cormorant Garamond",serif;
-  font-size:1.55rem;font-weight:600;
-  color:var(--white);letter-spacing:0.1em;
+  font-size:1.1rem;font-weight:700;
+  color:var(--white);letter-spacing:0.18em;
+  text-transform:uppercase;
   white-space:nowrap;
 }
-.logo-main span{color:var(--gold);}
-.logo-main .logo-u{color:var(--white);font-size:1.15em;font-weight:700;}
+.logo-main span{color:var(--white);}
+.logo-main .logo-u{color:var(--white);}
 .logo-sub{
-  font-size:0.52rem;font-weight:600;letter-spacing:0.32em;
-  text-transform:uppercase;color:rgba(201,164,90,0.6);margin-top:4px;
+  font-size:0.44rem;font-weight:600;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold);margin-top:0;
 }
 .logo-divider{
   width:1px;height:28px;
@@ -1248,15 +1261,19 @@ img{display:block;max-width:100%;}
 <header class="header" id="mainHeader">
   <div class="header-inner">
     <a href="#" class="header-logo">
-      <div class="logo-main"><span class="logo-u">U</span>topia <span>Realty</span></div>
+      <div class="logo-circle"><span>U</span></div>
+      <div class="logo-wordmark">
+        <div class="logo-main">Utopia Realty</div>
+        <div class="logo-sub">Florida's Premier Luxury Real Estate</div>
+      </div>
     </a>
 
     <nav class="header-nav">
       <a href="#hero" onclick="document.getElementById('searchInput').focus();return false;">Buy</a>
       <a href="#contact">Sell</a>
       <a href="team.html">Meet The Team</a>
-      <a href="#contact">Contact Us</a>
       <a href="join.html">Join Utopia</a>
+      <a href="#contact">Contact Us</a>
     </nav>
 
     <div class="header-cta">
@@ -1561,10 +1578,13 @@ img{display:block;max-width:100%;}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="header-logo">
-          <div class="logo-main"><span class="logo-u">U</span>topia <span>Realty</span></div>
-        </div>
-        <div class="logo-sub" style="margin-top:8px;">Luxury Real Estate</div>
+        <a href="#" class="header-logo">
+          <div class="logo-circle"><span>U</span></div>
+          <div class="logo-wordmark">
+            <div class="logo-main">Utopia Realty</div>
+            <div class="logo-sub">Florida's Premier Luxury Real Estate</div>
+          </div>
+        </a>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
