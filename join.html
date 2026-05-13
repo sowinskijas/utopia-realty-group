@@ -302,7 +302,7 @@ document.getElementById('agentForm').addEventListener('submit',async function(e)
   const data=new FormData(this);
   const obj=Object.fromEntries(data.entries());
   try{
-    const res=await fetch('https://formspree.io/f/xqewbqdv',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)});
+    const res=await fetch('https://formspree.io/f/mkoyeopj',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(obj)});
     if(res.ok){
       this.style.display='none';
       document.getElementById('formSuccess').style.display='block';
